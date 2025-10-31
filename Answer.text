@@ -1,0 +1,154 @@
+Q1) 
+Task 1:
+Answer) use PWSKILLS
+Task 2:
+Answer) db.createCollection("Employees")
+Task 3:
+Answer) db.Employees.insertMany([
+  {
+    name: "Adnan Nadeem",
+    age: 28,
+    department: "IT",
+    position: "Software Engineer",
+    salary: 60000,
+    city: "Pune"
+  },
+  {
+    name: "Sara Khan",
+    age: 25,
+    department: "HR",
+    position: "HR Executive",
+    salary: 40000,
+    city: "Mumbai"
+  },
+  {
+    name: "Ravi Sharma",
+    age: 32,
+    department: "Finance",
+    position: "Accountant",
+    salary: 55000,
+    city: "Delhi"
+  },
+  {
+    name: "Neha Verma",
+    age: 27,
+    department: "Marketing",
+    position: "Digital Marketer",
+    salary: 45000,
+    city: "Bangalore"
+  },
+  {
+    name: "Imran Shaikh",
+    age: 30,
+    department: "IT",
+    position: "Backend Developer",
+    salary: 65000,
+    city: "Hyderabad"
+  }
+])
+
+Task 4:
+Answer) db.employees.find()
+Task 5:
+Answer) db.employees.drop()
+Task 6:
+Answer) db.dropDatabase()
+
+Q2)
+Answer)  1) use shopDB
+         2) db.createCollection("Customers")
+         3) db.Customers.insertOne({
+         name: "Adnan Nadeem",
+         age: 29,
+         email: "adnan.nadeem@example.com",
+         phone: "9876543210",
+         city: "Pune",
+         membership: "Gold",
+         joinDate: new Date("2025-10-31")
+          })
+         4) db.Customers.find()
+
+Q3)
+Answer) db.Customers.find()
+
+Q4)
+Answer) 1) db.Customers.updateOne({name:"Adnan Nadeem"}, {$set: {address:"123 New Road, Mumbai"}})
+        2) db.Customers.find({name:"Adnan Nadeem"})
+
+Q5)
+Answer) 1) db.Customers.insertMany([
+          { name: "Adnan Nadeem", totalPurchase: 12000, city: "Pune" },
+          { name: "Sara Khan", totalPurchase: 8500, city: "Mumbai" },
+          { name: "Ravi Sharma", totalPurchase: 25000, city: "Delhi" },
+          { name: "Neha Verma", totalPurchase: 18000, city: "Bangalore" }
+        ]) 
+
+         2) db.Customers.find({ totalPurchase: { $gt: 10000 } })
+
+
+Q6)
+Answer) 1) db.Customers.deleteOne({ name: 'Sara Khan'})
+        2) db.Customers.find()
+
+Q7)
+Answer)  use SchoolDB
+
+Q8)
+Answer) 1) use SchoolDB
+        2) db.createCollection("Students")
+        3) db.Students.insertMany([
+       { name: "Adnan Nadeem", age: 20, grade: "A" },
+      { name: "Sara Khan", age: 19, grade: "B+" },
+  { name: "Ravi Sharma", age: 21, grade: "A-" },
+  { name: "Neha Verma", age: 18, grade: "B" },
+  { name: "Imran Shaikh", age: 22, grade: "A+" }
+       ])
+
+       4) db.Students.find()
+
+Q9) 
+Answer)  db.Students.find({
+  $or: [
+    { age: { $gt: 20 } }, 
+    { grade: "A" }      
+  ]
+})
+
+Q10)
+Answer)  1) db.Students.updateOne(
+  { name: "Sara Khan" },        
+  { $set: { grade: "A" } }      
+)          
+         
+         2) db.Students.find({ name: "Sara Khan" })
+
+
+Q11) 
+Answer)
+
+1) db.createCollection("Teachers")
+2) db.Teachers.insertMany([
+  { name: "Rajesh Kumar", subject: "Mathematics", experience: 10 },
+  { name: "Priya Sharma", subject: "English", experience: 7 },
+  { name: "Imran Shaikh", subject: "Physics", experience: 12 },
+  { name: "Neha Verma", subject: "Computer Science", experience: 5 },
+  { name: "Anjali Mehta", subject: "Biology", experience: 8 }
+])
+3) db.Teachers.find()
+
+Q12)
+Answer) db.Teachers.find({
+  $or: [
+    { subject: "Mathematics" },
+    { experience: { $gt: 8 } }
+  ]
+})
+
+Q13)
+Answer) 
+1) db.Teachers.updateOne(
+  { name: "Priya Sharma" },      
+  { $set: { experience: 9 } }    
+)
+
+2) db.Teachers.find({ name: "Priya Sharma" })
